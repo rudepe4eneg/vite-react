@@ -1,5 +1,12 @@
 import './Button.css';
 
-export default function Button({ children }) {
-    return <button className='button'>{children}</button>;
+// eslint-disable-next-line react/prop-types
+export default function Button({ children, handleClick }) {
+    return (
+        <button
+            className='button'
+            onClick={handleClick}>
+            {children}
+        </button>
+    );
 }

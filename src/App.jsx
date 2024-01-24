@@ -2,8 +2,16 @@ import Header from './components/Header';
 import WayToTeach from './components/WayToTeach';
 import { data } from './data';
 import Button from './components/Button/Button';
+import { useState } from 'react';
 
 export default function App() {
+    const [content, setContent] = useState('Нажми на кнопку');
+
+    function handleClick(type) {
+        console.log('button clicked', type);
+        setContent(type);
+    }
+
     return (
         <div>
             <Header />
@@ -18,9 +26,17 @@ export default function App() {
                 </section>
                 <section>
                     <h3>Чем мы отличаемся от других</h3>
-                    <Button>Подход</Button>
-                    <Button>Доступнность</Button>
-                    <Button>Концентрация</Button>
+                    <Button handleClick={() => handleClick('way')}>
+                        Подход
+                    </Button>
+                    <Button handleClick={() => handleClick('easy')}>
+                        Доступность
+                    </Button>
+                    <Button handleClick={() => handleClick('program')}>
+                        Концентрация
+                    </Button>
+
+                    <p>{content}</p>
                 </section>
             </main>
         </div>
