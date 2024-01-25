@@ -5,11 +5,11 @@ import Button from './components/Button/Button';
 import { useState } from 'react';
 
 export default function App() {
-    const [content, setContent] = useState('Нажми на кнопку');
+    const [buttonContent, setbuttonContent] = useState('Нажми на кнопку');
 
     function handleClick(type) {
         console.log('button clicked', type);
-        setContent(type);
+        setbuttonContent(type);
     }
 
     return (
@@ -36,7 +36,7 @@ export default function App() {
                         Концентрация
                     </Button>
 
-                    <p>{content}</p>
+                    <p>{buttonContent}</p>
                 </section>
             </main>
         </div>
