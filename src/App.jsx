@@ -1,4 +1,4 @@
-import Header from './components/Header';
+import Header from './components/Header/Header';
 import TeachingSection from './components/TeachingSection';
 import DifferencesSection from './components/DifferencesSection';
 import IntroSection from './components/IntroSection';
@@ -26,11 +26,7 @@ export default function App() {
                     </>
                 )}
 
-                {tab === 'feedback' && (
-                    <>
-                        <FeedbackSection />
-                    </>
-                )}
+                {tab === 'feedback' && <FeedbackSection />}
             </main>
         </>
     );

@@ -1,11 +1,15 @@
-import './Button.css';
+import classes from './Button.module.css';
 
 // eslint-disable-next-line react/prop-types
-export default function Button({ children, handleClick, isActive }) {
+export default function Button({ children, onClick, isActive }) {
     return (
         <button
-            className={isActive ? 'button active' : 'button'}
-            onClick={handleClick}>
+            className={
+                isActive
+                    ? `${classes.button} ${classes.active}`
+                    : classes.button
+            }
+            onClick={onClick}>
             {children}
         </button>
     );
